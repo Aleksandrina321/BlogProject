@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label class="col-sm-4 control-label" for="article_category">Category</label>
+    <div class="col-sm-6">
+        <select class="form-control" id="article_category" name="categoryId">
+            <option th:each="category : ${categories}" th:value="${category.id}" th:text="${category.name}"></option>
+        </select>
+
+        <small class="author" th:text="${article.author.fullName}"></small>
+        <p>
+            <a class="btn btn-default btn-xs" th:each="tag:${article.tags}" th:href="@{/tag/{name}(name=${tag.name})}" th:text="${tag.name}"></a>
+        </p>
+
+    </div>
+</div>
